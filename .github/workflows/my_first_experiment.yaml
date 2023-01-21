@@ -14,7 +14,7 @@ jobs:
           pip install -r requirements.txt
           python train.py
 
-          cat metrics.txt >> report.md
+          cat results.txt >> report.md
           echo "![](./plot.png)" >> report.md
           cml comment create report.md          # Your ML workflow goes here
           pip install -r requirements.txt
