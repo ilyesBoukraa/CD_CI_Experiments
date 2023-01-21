@@ -34,7 +34,7 @@ jobs:
           # Post my Images
           echo "# Our Dataset" > report.md
           
-          cml-publish publish dataset.png --md >> report.md
+          cml-publish dataset.png --md >> report.md
           
           echo "# XGB Confusion Matrix Results" > report.md
           cml-publish Confusion_Matrix.png --md >> report.md
