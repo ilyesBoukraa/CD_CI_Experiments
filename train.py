@@ -20,8 +20,12 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.4, random_
 xgb = GradientBoostingClassifier(n_estimators=1, learning_rate=0.5, max_depth=1, random_state=0)
 xgb.fit(X_train, y_train)
 
-my_xgb_score = xgb.score(X_test, y_test)
-print('my_xgb_score is',my_xgb_score)
+# Results
+my_xgb_test_score = xgb.score(X_test, y_test)
+print('my_xgb_score is',my_xgb_test_score)
+
+with open('results.txt','w') as my_file:
+    my_file.write('Extreme Gradient Boosting Test Score:\n' % my_xgb_test_score)
 
 ConfusionMatrixDisplay.from_estimator(xgb, X_test, y_test)
 plt.savefig('Confusion_Matrix.png')
