@@ -27,6 +27,7 @@ print('my_xgb_score is',my_xgb_test_score)
 with open('results.txt','w') as my_file:
     my_file.write('Extreme Gradient Boosting Test Score:\n' % my_xgb_test_score)
 
+
 ConfusionMatrixDisplay.from_estimator(xgb, X_test, y_test)
 plt.savefig('Confusion_Matrix.png')
 plt.show()
