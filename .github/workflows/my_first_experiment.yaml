@@ -39,3 +39,5 @@ jobs:
           
           echo "# XGB Confusion Matrix Results" > report.md
           cml-publish Confusion_Matrix.png --md >> report.md
+          
+          cml-send-comment report.md
