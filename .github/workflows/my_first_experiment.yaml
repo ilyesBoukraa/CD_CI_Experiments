@@ -28,7 +28,6 @@ jobs:
           # Post reports as comments in GitHub PRs
           echo "# XGB Mdel Results" > report.md
           cat results.txt >> report.md
-          cml comment create report.md
           
           echo "# Visualization" > report.md
           
@@ -40,4 +39,4 @@ jobs:
           echo "# XGB Confusion Matrix Results" > report.md
           cml-publish Confusion_Matrix.png --md >> report.md
           
-          cml-send-comment report.md
+          cml comment create report.md
