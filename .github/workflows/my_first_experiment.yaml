@@ -26,16 +26,16 @@ jobs:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           # Post reports as comments in GitHub PRs
-          echo "# XGB Mdel Results." > report.md
+          echo "# XGB Mdel Results" > report.md
           cat results.txt >> report.md
           cml comment create report.md
           
-          echo "# Visualization." > report.md
+          echo "# Visualization" > report.md
           
           # Post my Images
-          echo "# Our Dataset." > report.md
+          echo "# Our Dataset" > report.md
           
           cml-publish dataset.png --md >> report.md
           
-          echo "# XGB Confusion Matrix Results." > report.md
+          echo "# XGB Confusion Matrix Results" > report.md
           cml-publish Confusion_Matrix.png --md >> report.md
