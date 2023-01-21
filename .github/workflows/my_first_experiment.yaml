@@ -16,9 +16,7 @@ jobs:
 
           cat results.txt >> report.md
           cml comment create report.md          # Your ML workflow goes here
-          pip install -r requirements.txt
-          python train.py
-    
+          
           # Post reports as comments in GitHub PRs
           echo "# XGB Mdel Results" > report.md
           cat results.txt >> report.md
@@ -28,11 +26,9 @@ jobs:
           # Post my Images
           echo "# Our Dataset" > report.md
           
-          #cml-publish dataset.png --md >> report.md
           echo "![](./dataset.png)" >> report.md
           
           echo "# XGB Confusion Matrix Results" > report.md
-          #cml-publish Confusion_Matrix.png --md >> report.md
           echo "![](./Confusion_Matrix.png)" >> report.md
           
           cml comment create report.md
