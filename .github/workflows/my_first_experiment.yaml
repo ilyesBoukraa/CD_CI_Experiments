@@ -17,7 +17,7 @@ jobs:
 
           cat results.txt >> report.md
           # Post reports as comments in GitHub PRs
-          echo "# XGB Mdel Results" > report.md
+          echo "# XGB Model Results" > report.md
           cat results.txt >> report.md
           
           #echo "# Visualizations" > report.md
