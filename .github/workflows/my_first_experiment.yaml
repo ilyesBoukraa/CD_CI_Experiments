@@ -15,9 +15,9 @@ jobs:
           python train.py
 
           #cat results.txt >> report.md
-          
+          echo 1 > report.md
           # Post reports as comments in GitHub PRs
-          echo "XGB Mdel Results" > report.md
+          #echo "XGB Mdel Results" > report.md
           #cat results.txt >> report.md
           
           #echo "# Visualization" > report.md
