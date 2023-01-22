@@ -20,14 +20,14 @@ jobs:
           echo "# XGB Mdel Results" > report.md
           cat results.txt >> report.md
           
-          echo "# Visualization" > report.md
+          #echo "# Visualizations" > report.md
           
           # Post my Images
-          echo "# Our Dataset" > report.md
+          #echo "# Our Dataset" > report.md
           
-          echo "![](./dataset.png)" >> report.md
+          #echo "![](./dataset.png)" >> report.md
           
-          echo "# XGB Confusion Matrix Results" > report.md
-          echo "![](./Confusion_Matrix.png)" >> report.md
+          #echo "# XGB Confusion Matrix Results" > report.md
+          #echo "![](./Confusion_Matrix.png)" >> report.md
           
           cml comment create report.md
