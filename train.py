@@ -28,7 +28,7 @@ print('my_xgb_score is', my_xgb_test_score)
 #    my_file.write('Extreme Gradient Boosting Test Score:\n' % my_xgb_test_score)
 
 my_file = open('results.txt','w')
-my_file.write('Extreme Gradient Boosting Test Score:\n' , str(my_xgb_test_score) )
+my_file.write('Extreme Gradient Boosting Test Score:\n' + str(my_xgb_test_score) )
 my_file.close()
 
 
