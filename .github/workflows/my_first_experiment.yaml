@@ -11,17 +11,16 @@ jobs:
       - name: Train model
         env:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
+        run: | 
           pip install -r requirements.txt
           python train.py
-          steps:
           - bash: |
                 #cat results.txt >> report.md
                 # Post reports as comments in GitHub PRs
                 echo "# XGB Model Results" > report.md
                 cat results.txt >> report.md 
            
-           - bash: |
+          - bash: |
                 echo "# Visualizations" > report.md
                 # Post my Images
                 echo "## Our Dataset" > report.md
@@ -31,4 +30,4 @@ jobs:
                 echo "## XGB Confusion Matrix Results" > report.md
                 echo "![](./Confusion_Matrix.png)" >> report.md
 
-          cml comment create report.md
+           cml comment create report.md
