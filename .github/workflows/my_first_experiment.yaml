@@ -2,6 +2,7 @@ name: my-first-experiment-with-cml
 on: [push]
 jobs:
   run:
+    permissions: write-all
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
