@@ -14,20 +14,23 @@ jobs:
         run: |
           pip install -r requirements.txt
           python train.py
+          
+          - bash: |
+                #cat results.txt >> report.md
+                # Post reports as comments in GitHub PRs
+                echo "# XGB Model Results" > report.md
+                cat results.txt >> report.md 
+           
+           - bash: |
+                echo "# Visualizations" > report.md
+           - bash: |
+                # Post my Images
+                echo "# Our Dataset" > report.md
+           - bash: |
+                echo "![](./dataset.png)" >> report.md
+           - bash: |
+                echo "# XGB Confusion Matrix Results" > report.md
+           - bash: |
+                echo "![](./Confusion_Matrix.png)" >> report.md
 
-          cat results.txt >> report.md
-          # Post reports as comments in GitHub PRs
-          echo "# XGB Model Results" > report.md
-          cat results.txt >> report.md
-          
-          echo "# Visualizations" > report.md
-          
-          # Post my Images
-          echo "# Our Dataset" > report.md
-          
-          #echo "![](./dataset.png)" >> report.md
-          
-          #echo "# XGB Confusion Matrix Results" > report.md
-          #echo "![](./Confusion_Matrix.png)" >> report.md
-          
-          cml comment create report.md
+                cml comment create report.md
