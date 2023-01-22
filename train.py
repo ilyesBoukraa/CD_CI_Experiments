@@ -11,8 +11,8 @@ X, y = make_blobs(n_samples=10_000, centers=3,
 
 plt.scatter(X[:,0],X[:,1], c=y)
 plt.savefig('dataset.png')
-plt.show()
-
+#plt.show()
+plt.close()
 # Splitting Data.
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.4, random_state=42)
 
@@ -29,8 +29,8 @@ with open('results.txt','w') as my_file:
 
 ConfusionMatrixDisplay.from_estimator(xgb, X_test, y_test)
 plt.savefig('Confusion_Matrix.png')
-plt.show()
-
+#plt.show()
+plt.close()
 y_pred = xgb.predict(X_test)
 class_report = classification_report(y_test, y_pred)
 print(class_report)
