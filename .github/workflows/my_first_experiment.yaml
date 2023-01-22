@@ -1,0 +1,32 @@
+name: my-first-experiment-with-cml
+on: [push]
+jobs:
+  run:
+    permissions: write-all
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+      - uses: iterative/setup-cml@v1
+      - name: Train model
+        env:
+          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: | 
+          pip install -r requirements.txt
+          python train.py
+          
+          # Post reports as comments in GitHub PRs
+          echo "# XGB Model Results" > report.md
+          cat results.txt >> report.md 
+          cml comment create report.md
+          
+          echo "# Visualizations" > report.md
+          # Post my Images
+          echo "## Our Dataset" > report.md
+          echo "![](./dataset.png)" >> report.md
+          cml comment create report.md
+
+          echo "## XGB Confusion Matrix Results" > report.md
+          echo "![](./Confusion_Matrix.png)" >> report.md
+
+          cml comment create report.md
