@@ -20,10 +20,10 @@ jobs:
           echo "# XGB Model Results" > report.md
           cat results.txt >> report.md
           
-          #echo "# Visualizations" > report.md
+          echo "# Visualizations" > report.md
           
           # Post my Images
-          #echo "# Our Dataset" > report.md
+          echo "# Our Dataset" > report.md
           
           #echo "![](./dataset.png)" >> report.md
           
