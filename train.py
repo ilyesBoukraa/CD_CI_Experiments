@@ -17,7 +17,7 @@ plt.show()
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.4, random_state=42)
 
 # Training our Model.
-xgb = GradientBoostingClassifier(n_estimators=1, learning_rate=0.5, max_depth=1, random_state=0)
+xgb = GradientBoostingClassifier(n_estimators=10, learning_rate=0.5, max_depth=1, random_state=0)
 xgb.fit(X_train, y_train)
 
 # Results
