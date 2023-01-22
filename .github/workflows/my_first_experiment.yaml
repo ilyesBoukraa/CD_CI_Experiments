@@ -28,9 +28,10 @@ jobs:
                 echo "# Our Dataset" > report.md
            - bash: |
                 echo "![](./dataset.png)" >> report.md
+           
            - bash: |
                 echo "# XGB Confusion Matrix Results" > report.md
            - bash: |
                 echo "![](./Confusion_Matrix.png)" >> report.md
 
-                cml comment create report.md
+          cml comment create report.md
